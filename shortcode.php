@@ -156,8 +156,7 @@ function my_shortcode()
   ob_start();
   $sql = "SELECT * FROM products" . $conditions;
   $data = executeQuery($sql);
-  $countSQL = "SELECT COUNT(*) FROM products";
-  $i = executeQuery($countSQL);
+
 ?>
   <style type="text/css">
     .p-blogCard__inner {
@@ -181,11 +180,13 @@ function my_shortcode()
       margin-left: -320px;
     }
   </style>
+
   <?php
+  $i = $data->num_rows;
   if ($i == 0) {
-    "<p>条件を満たす商品が見つかりませんでした。</p>";
+    echo "<p>条件を満たす商品が見つかりませんでした。</p>";
   } else {
-    "<p>" . $i . "件の商品がヒットしました。</p>";
+    echo "<p>" . $i . "件の商品がヒットしました。</p>";
   }
   ?>
 
