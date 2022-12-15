@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 $i = 0;
 foreach ($Data as $info) {
   $sql = "SELECT * FROM products WHERE name='" . $info['name'] . "'";

@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function scraping()
 {
   require("phpQuery-onefile.php");

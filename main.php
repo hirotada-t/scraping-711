@@ -1,9 +1,16 @@
 <?php
-/*
-Plugin Name: スクレイピング・プラグイン
-Description: スクレイピングを行います。
-Author: t-hiro
-*/
+/**
+ * Plugin Name: スクレイピング・プラグイン
+ * Plugin URI: プラグインの説明ページなどのURL
+ * Description: セブンイレブンの商品情報を取得してDBに保存します。また必要に応じてソートして表示することができます。
+ * Version: 1.0.0
+ * Author: hirotada
+ * Author URI: 制作者のサイトURL
+ * License: GPL2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: 翻訳用のテキストドメイン
+ */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 //管理画面にボタン設定 
 require('admin-button.php');

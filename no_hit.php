@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function url_check(){
   $sql = "SELECT * FROM products";
   $results = executeQuery($sql);

@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 add_action('admin_menu', 'scraping_btn');
 function scraping_btn()
 {
