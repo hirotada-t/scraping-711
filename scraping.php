@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
 
 function scraping()
 {
@@ -85,5 +85,5 @@ function scraping()
   }
 
   require_once("db.php");
-  $Data=[];
+  $Data = [];
 }

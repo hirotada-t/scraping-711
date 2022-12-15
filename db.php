@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
 
 $i = 0;
 foreach ($Data as $info) {

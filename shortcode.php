@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
 
 // 商品検索
 function product_serch()
@@ -156,8 +156,8 @@ function my_shortcode()
   ob_start();
   $sql = "SELECT * FROM products" . $conditions;
   $data = executeQuery($sql);
-  global $i;
-  $i = 0;
+  $countSQL = "SELECT COUNT(*) FROM products";
+  $i = executeQuery($countSQL);
 ?>
   <style type="text/css">
     .p-blogCard__inner {
@@ -181,11 +181,13 @@ function my_shortcode()
       margin-left: -320px;
     }
   </style>
-
-  <!-- <div id="photo-area" class="viewport"></div>
-  <script src="<?php echo plugin_dir_url(__FILE__); ?>js/jquery-3.6.0.min.js" type="text/javascript"></script>
-  <script src="<?php echo plugin_dir_url(__FILE__); ?>js/quagga.min.js" type="text/javascript"></script>
-  <script src="<?php echo plugin_dir_url(__FILE__); ?>js/test.js" type="text/javascript"></script> -->
+  <?php
+  if ($i == 0) {
+    "<p>条件を満たす商品が見つかりませんでした。</p>";
+  } else {
+    "<p>" . $i . "件の商品がヒットしました。</p>";
+  }
+  ?>
 
   <div class="alignwide swell-block-columns is-style-default u-mb-ctrl u-mb-10" style="--swl-fb_tab:100%;--swl-clmn-mrgn--x:0.5rem;--swl-clmn-mrgn--y:0.5rem">
     <div class="swell-block-columns__inner">
@@ -247,14 +249,3 @@ function my_shortcode()
   return ob_get_clean();
 }
 add_shortcode("original_shortcode", "my_shortcode");
-
-// 商品件数
-function product_count()
-{
-  if ($GLOBALS["i"] == 0) {
-    return "<p>条件を満たす商品が見つかりませんでした。</p>";
-  } else {
-    return "<p>" . $GLOBALS["i"] . "件の商品がヒットしました。</p>";
-  }
-}
-add_shortcode("kensu", "product_count");
