@@ -1,6 +1,13 @@
 # scraping-711
 WordPress用のプラグインです。
 
+## Demo
+
+
+https://user-images.githubusercontent.com/68522105/209361734-71343cd6-c453-4da0-b691-f8b47af8c85b.mp4
+
+
+
 ## How to use
 
 ### 管理画面
